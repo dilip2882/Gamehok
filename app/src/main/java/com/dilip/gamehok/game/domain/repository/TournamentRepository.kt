@@ -7,5 +7,4 @@ import com.dilip.gamehok.game.domain.model.tournamentslist.TournamentsListItemMo
 
 interface TournamentRepository {
     suspend fun getTournamentList(): Either<Failure, List<TournamentsListItemModel>>
-    suspend fun getTournamentDetails(): Either<Failure, TournamentsDetailsItemModel>
 }
