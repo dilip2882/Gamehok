@@ -1,7 +1,9 @@
 package com.dilip.gamehok
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.getValue
@@ -23,26 +25,20 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.light(
+                Color.TRANSPARENT, Color.TRANSPARENT
+            ),
+            navigationBarStyle = SystemBarStyle.light(
+                Color.TRANSPARENT, Color.TRANSPARENT
+            )
+        )
         setContent {
             GamehokTheme {
-//                HomeScreen()
-
                 navController = rememberNavController()
                 MainNavigation(
                     navController = navController!!,
                 )
-
-//                val viewModel: TournamentDetailsViewModel = hiltViewModel()
-//                val state by viewModel.state.collectAsStateWithLifecycle()
-//                val dispatch: (TournamentDetailsContract.TournamentDetailsEvent) -> Unit =
-//                    { event ->
-//                        viewModel.event(event)
-//                    }
-//                TournamentDetailsScreen(
-//                    state = state,
-//                    dispatch = dispatch
-//                )
             }
         }
     }
