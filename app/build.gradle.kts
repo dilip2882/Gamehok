@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt.android)
     alias(libs.plugins.kotlin.serialization)
+//    alias(libs.plugins.org.jetbrains.kotlin.kapt)
     alias(libs.plugins.ksp)
 }
 
@@ -46,12 +47,15 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.material.icons.extended)
 
     implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.kotlin.reflect)
@@ -62,7 +66,12 @@ dependencies {
     implementation(libs.retrofit2.kotlinx.serialization.converter)
 
     implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
     ksp(libs.hilt.android.compiler)
+//    kapt(libs.hilt.android.compiler)
+//    ksp(libs.hilt.androidx.compiler)
+
+    implementation(libs.coil.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

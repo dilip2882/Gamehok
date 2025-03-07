@@ -13,7 +13,7 @@ import com.dilip.gamehok.game.domain.repository.GameRepository
 import com.dilip.gamehok.game.domain.repository.TournamentRepository
 import javax.inject.Inject
 
-class TournamentRepositoryImpl@Inject constructor(
+class TournamentRepositoryImpl @Inject constructor(
     private val apiService: ApiService,
     private val tournamentListMapper: TournamentsListMapper,
 ): TournamentRepository {

@@ -19,8 +19,8 @@ class GameListMapper @Inject constructor() :
 
     private fun GameListItemDto.toModel() =
         GameListItemModel(
-            id = id,
-            gameName = gameName,
+            id = id!!,
+            gameName = gameName!!,
             imagePath = imagePath
         )
 }
