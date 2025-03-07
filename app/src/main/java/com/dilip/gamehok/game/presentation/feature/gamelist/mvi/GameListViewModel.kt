@@ -1,4 +1,4 @@
-package com.dilip.gamehok.game.presentation.gamelist.mvi
+package com.dilip.gamehok.game.presentation.feature.gamelist.mvi
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -43,7 +43,11 @@ class GameListViewModel @Inject constructor(
 
             is GameListContract.GameListEvent.GameClicked -> {
                 viewModelScope.launch {
-                    mutableSharedFlow.emit(GameListContract.GameListEffect.NavigateToGameDetails(event.model))
+                    mutableSharedFlow.emit(
+                        GameListContract.GameListEffect.NavigateToGameDetails(
+                            event.model
+                        )
+                    )
                 }
             }
 

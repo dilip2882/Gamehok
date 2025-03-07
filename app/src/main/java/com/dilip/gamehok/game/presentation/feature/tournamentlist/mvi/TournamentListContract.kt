@@ -1,9 +1,11 @@
-package com.dilip.gamehok.game.presentation.tournamentlist.mvi
+package com.dilip.gamehok.game.presentation.feature.tournamentlist.mvi
 
 import com.dilip.gamehok.core.common.error.Failure
 import com.dilip.gamehok.core.ui.mvi.MVIContract
 import com.dilip.gamehok.game.domain.model.gameslist.GameListItemModel
 import com.dilip.gamehok.game.domain.model.tournamentslist.TournamentsListItemModel
+import com.dilip.gamehok.game.presentation.feature.gamelist.mvi.GameListContract.GameListEffect
+import com.dilip.gamehok.game.presentation.feature.gamelist.mvi.GameListContract.GameListEvent
 
 interface TournamentListContract :
     MVIContract<TournamentListContract.TournamentListState, TournamentListContract.TournamentListEffect, TournamentListContract.TournamentListEvent> {
@@ -11,6 +13,8 @@ interface TournamentListContract :
     sealed class TournamentListEvent {
         data object LoadTournamentList : TournamentListEvent()
         data class TournamentClicked(val model: TournamentsListItemModel) : TournamentListEvent()
+        data object TournamentViewAllClicked : TournamentListEvent()
+
     }
 
     sealed class TournamentListState {
@@ -25,5 +29,7 @@ interface TournamentListContract :
 
     sealed class TournamentListEffect {
         data class NavigateToTournamentDetails(val model: TournamentsListItemModel) : TournamentListEffect()
+        data object NavigateToTournamentListGrid : TournamentListEffect()
+
     }
 }

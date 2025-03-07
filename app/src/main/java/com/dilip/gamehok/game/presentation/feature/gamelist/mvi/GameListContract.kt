@@ -1,4 +1,4 @@
-package com.dilip.gamehok.game.presentation.gamelist.mvi
+package com.dilip.gamehok.game.presentation.feature.gamelist.mvi
 
 import com.dilip.gamehok.core.common.error.Failure
 import com.dilip.gamehok.core.ui.mvi.MVIContract

@@ -1,4 +1,4 @@
-package com.dilip.gamehok.game.presentation.gamelist
+package com.dilip.gamehok.game.presentation.feature.gamelist
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
